@@ -1,17 +1,18 @@
-import './style.css';
+import "./style.css";
 
-import tasks from './data.js';
+import tasks from "./data.js";
 
 const tasksList = tasks;
+console.log(tasksList);
 function component() {
   const tasksSort = tasksList.sort((a, b) => a.index - b.index);
-  const element = document.querySelector('#list');
+  const element = document.querySelector("#list");
   tasksSort.forEach((task) => {
-    const taskElement = document.createElement('li');
-    taskElement.classList.add('items');
+    const taskElement = document.createElement("li");
+    taskElement.classList.add("items");
     taskElement.innerHTML = `
           <div>
-            <input type='checkbox' ${task.completed ? 'checked' : ''}
+            <input type='checkbox' ${task.completed ? "checked" : ""}
         class='box' name='car'>
             <input for=''  class='task' id='task' value='${task.description}'>
           </div>
@@ -23,5 +24,4 @@ function component() {
   });
   return element;
 }
-
 document.body.appendChild(component());
