@@ -1,23 +1,10 @@
 import './style.css';
 
-const tasks = [
-  {
-    index: 0,
-    description: 'Do the dishes',
-    completed: true,
-  },
-  {
-    index: 2,
-    description: 'Do the laundry',
-    completed: false,
-  },
-  {
-    index: 1,
-    description: 'Do the homework',
-    completed: false,
-  }];
+import tasks from './data.js';
+
+const tasksList = tasks;
 function component() {
-  const tasksSort = tasks.sort((a, b) => a.index - b.index);
+  const tasksSort = tasksList.sort((a, b) => a.index - b.index);
   const element = document.querySelector('#list');
   tasksSort.forEach((task) => {
     const taskElement = document.createElement('li');
