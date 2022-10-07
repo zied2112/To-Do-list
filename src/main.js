@@ -65,3 +65,29 @@ label.forEach((input, index) => input.addEventListener('change', () => {
   tasksArray[index].description = input.value;
   sort(tasksArray);
 }));
+
+const complete = () => {
+  const box = document.querySelectorAll('.box');
+  box.forEach((input, index) => input.addEventListener('change', (e) => {
+    if (tasksArray[index].completed === false) {
+      e.target.closest('input').style.textDecoration = 'line-through';
+      tasksArray[index].completed = true;
+    } else {
+      tasksArray[index].completed = false;
+    }
+    Storage(tasksArray);
+  }));
+};
+
+const clear = document.querySelector('#clear-btn');
+clear.addEventListener('click', () => {
+  const completedTasks = tasksArray.filter((data) => data.completed === true);
+  completedTasks.forEach((data) => {
+    const index = tasksArray.indexOf(data);
+    tasksArray.splice(index, 1);
+  });
+  sort(tasksArray);
+  display();
+  window.location.reload();
+});
+complete();
