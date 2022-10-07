@@ -25,6 +25,12 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  /* width: 50%; */
+}
+
+h1 {
+  text-align: center;
 }
 
 .items {
@@ -38,6 +44,85 @@ ul {
   border-bottom: 0.2px solid #d3d3d3;
 }
 
+.todo-item input {
+  height: 1em;
+  width: 1em;
+  border: 0.5em solid #c1c1c3;
+}
+
 .items > div > input {
   background-color: transparent;
+}
+
+.todo-wrap {
+  margin: 0 auto;
+  margin-top: 3em;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 0 10px #0003;
+}
+
+.header {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.2px solid #d3d3d3;
+  width: 100%;
+  padding: 1em;
+}
+
+.title {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.refresh {
+  width: fit-content;
+  height: 1em;
+  opacity: 0.5;
+}
+
+.todo-input {
+  width: 100%;
+  padding: 1em;
+  border: none;
+  border-bottom: 0.2px solid #d3d3d3;
+}
+
+.todo-input::placeholder {
+  padding-left: 0.5em;
+  font-size: 1.1em;
+  font-style: italic;
+  font-weight: 100;
+}
+
+.items svg {
+  cursor: move;
+  opacity: 0.3;
+}
+
+.items svg:hover {
+  opacity: 1;
+}
+
+label {
+  padding-left: 0.7em;
+  word-spacing: 0.2em;
+  letter-spacing: 1px;
+}
+
+.clear-button {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1em;
+  background: #d3d3d3;
+  font-size: 1em;
+  font-weight: lighter;
+  opacity: 0.5;
+  cursor: pointer;
 }
